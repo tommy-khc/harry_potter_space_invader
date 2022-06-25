@@ -5,7 +5,8 @@
 
 import turtle
 import random
-from playsound import playsound
+from pydub import AudioSegment
+from pydub.playback import play
 
 """
     Constants and variables
@@ -59,6 +60,11 @@ laser_hit_enemy_distance = 20
     # The laser will destory an enemy if the distance
     # between the laser and the enemy is smaller than
     # this value
+
+shoot_sound = AudioSegment.from_wav('shoot.wav')
+killed_sound = AudioSegment.from_wav('killed.wav')
+win_sound = AudioSegment.from_wav('winning.wav')
+gameover_sound = AudioSegment.from_wav('gameover.wav')
 
 enemy_firing_interval = 175
 
@@ -207,7 +213,7 @@ def kill(x,y):
     for enemy in enemies: 
         if enemy.isvisible() and A.distance(enemy)< laser_hit_enemy_distance:
                 enemy.hideturtle()
-                playsound('killed.wav')
+                play(killed_sound)
     
               
     
@@ -254,14 +260,14 @@ def updatescreen():
             enemy.goto(x + dx, y + dy)
             if y > 0:
                 if (x // 20) % 2 == 0 :
-                    enemy.shape("V.gif")
+                    enemy.shape("Voldemort1.gif")
                 else:
-                    enemy.shape("V2.gif")
+                    enemy.shape("Voldemort2.gif")
             else:
                 if (x // 20) % 2 == 0 :
-                    enemy.shape("V3.gif")
+                    enemy.shape("Voldemort3.gif")
                 else:
-                    enemy.shape("V2.gif")
+                    enemy.shape("Voldemort2.gif")
     # Part 4.3 - Moving the laser
     # Perfrom several actions if the laser is visible
     if laser.isvisible():
@@ -278,7 +284,7 @@ def updatescreen():
                 # Stop if some enemy is hit
                 enemy.hideturtle()
                 laser.hideturtle()
-                playsound('killed.wav')
+                play(killed_sound)
                 break
 
     if bullet.isvisible() and s == 0:
@@ -341,7 +347,7 @@ def shoot():
     # Shoot the laser only if it is not visible
     if not laser.isvisible():
         laser.showturtle()
-        playsound('shoot.wav')
+        play(shoot_sound)
         laser.goto(player.position())
         
     #
@@ -470,10 +476,10 @@ def gameover(message):
     message_turtle = turtle.Turtle()
     if message == 'You Won!':
         message_turtle.color("yellow")
-        playsound('winning.wav')
+        play(win_sound)
     if message == 'You Lose!':
         message_turtle.color("red")
-        playsound('gameover.wav')
+        play(gameover)
     message_turtle.write(message, align='center', font=("System", 30, "bold"))
     turtle.hideturtle()
     turtle.uplate()
