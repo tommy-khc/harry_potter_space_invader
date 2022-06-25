@@ -5,6 +5,7 @@
 
 import turtle
 import random
+import simpleaudio as sa
 
 """
     Constants and variables
@@ -59,6 +60,11 @@ laser_hit_enemy_distance = 20
     # between the laser and the enemy is smaller than
     # this value
 
+shoot_sound = sa.WaveObject.from_wave_file("shoot.wav")
+killed_sound = sa.WaveObject.from_wave_file("killed.wav")
+win_sound = sa.WaveObject.from_wave_file("winning.wav")
+gameover_sound = sa.WaveObject.from_wave_file("gameover.wav")
+
 enemy_firing_interval = 175
 
 s = 0
@@ -79,7 +85,7 @@ def startscreen():
         start_button.forward(25)
         start_button.left(90)
     start_button.end_fill()
-    start_button.color("White")
+    start_button.color("yellow")
     start_button.goto(0, -35)
     start_button.write("Start", font=("System", 12, "bold"), align="center")
     start_button.goto(0, -28)
@@ -91,21 +97,21 @@ def startscreen():
 
     labels = turtle.Turtle()
     labels.hideturtle()
-    labels.color('white')
+    labels.color('yellow')
     labels.up()
     labels.goto(-100, 0) # Put the text next to the spinner control
     labels.write("Number of Enemies:", font=("System", 12, "bold"))
 
     enemy_number_text = turtle.Turtle()
     enemy_number_text.hideturtle()
-    enemy_number_text.color('white')
+    enemy_number_text.color('yellow')
     enemy_number_text.up()
     enemy_number_text.goto(80, 0)
     enemy_number_text.write(str(enemy_number), font=("System", 12, "bold"), align="center")
 
     left_arrow = turtle.Turtle()
     left_arrow.shape("arrow")
-    left_arrow.color("white")
+    left_arrow.color("yellow")
     left_arrow.shapesize(0.5, 1)
     left_arrow.left(180)
     left_arrow.up()
@@ -114,7 +120,7 @@ def startscreen():
 
     right_arrow = turtle.Turtle()
     right_arrow.shape("arrow")
-    right_arrow.color("white")
+    right_arrow.color("yellow")
     right_arrow.shapesize(0.5, 1)
     right_arrow.up()
     right_arrow.goto(100,8)
@@ -122,16 +128,14 @@ def startscreen():
 
     Title = turtle.Turtle()
     Title.hideturtle()
-    Title.color('white')
+    Title.color('yellow')
     Title.up()
-    Title.goto(0, 200)
-    Title.write("Python", font=("System", 30, "bold"), align="center")
     Title.goto(0, 150)
     Title.write("The last fight", font=("System", 30, "bold"), align="center")
     Title.goto(0,100)
     Title.write("Control Harry Potter using the arrow keys", font=("System", 17, "bold"), align="center")
     Title.goto(0,50)
-    Title.write("and space bar to kill Voldemort", font=("System", 17, "bold"), align="center")
+    Title.write("and press space bar to kill Voldemort", font=("System", 17, "bold"), align="center")
     
     turtle.update()
 
@@ -206,6 +210,8 @@ def kill(x,y):
     for enemy in enemies: 
         if enemy.isvisible() and A.distance(enemy)< laser_hit_enemy_distance:
                 enemy.hideturtle()
+                play = killed_sound.play()
+                play.wait_done()
 
     
               
@@ -339,6 +345,8 @@ def shoot():
     # Shoot the laser only if it is not visible
     if not laser.isvisible():
         laser.showturtle()
+        play = shoot_sound.play()
+        play.wait_done
         laser.goto(player.position())
         
     #
@@ -467,8 +475,12 @@ def gameover(message):
     message_turtle = turtle.Turtle()
     if message == 'You Won!':
         message_turtle.color("yellow")
+        win_sound_play = win_sound.play()
+        win_sound_play.wait_done()
     if message == 'You Lose!':
         message_turtle.color("red")
+        gameover_sound_play = gameover_sound.play()
+        gameover_sound_play.wait_done()
     message_turtle.write(message, align='center', font=("System", 30, "bold"))
     turtle.hideturtle()
     turtle.uplate()
