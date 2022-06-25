@@ -4,12 +4,8 @@
 """
 
 import turtle
-import pygame
 import random
-
-turtle.begin_fill()
-pygame.init()
-pygame.mixer.init(buffer=16)
+from playsound import playsound
 
 """
     Constants and variables
@@ -63,11 +59,6 @@ laser_hit_enemy_distance = 20
     # The laser will destory an enemy if the distance
     # between the laser and the enemy is smaller than
     # this value
-
-shoot_sound = pygame.mixer.Sound('shoot.wav')
-killed_sound = pygame.mixer.Sound('killed.wav')
-win_sound = pygame.mixer.Sound('winning.wav')
-gameover_sound = pygame.mixer.Sound('gameover.wav')
 
 enemy_firing_interval = 175
 
@@ -216,7 +207,7 @@ def kill(x,y):
     for enemy in enemies: 
         if enemy.isvisible() and A.distance(enemy)< laser_hit_enemy_distance:
                 enemy.hideturtle()
-                killed_sound.play()
+                playsound('killed.wav')
     
               
     
@@ -287,7 +278,7 @@ def updatescreen():
                 # Stop if some enemy is hit
                 enemy.hideturtle()
                 laser.hideturtle()
-                killed_sound.play()
+                playsound('killed.wav')
                 break
 
     if bullet.isvisible() and s == 0:
@@ -350,7 +341,7 @@ def shoot():
     # Shoot the laser only if it is not visible
     if not laser.isvisible():
         laser.showturtle()
-        shoot_sound.play()
+        playsound('shoot.wav')
         laser.goto(player.position())
         
     #
@@ -479,10 +470,10 @@ def gameover(message):
     message_turtle = turtle.Turtle()
     if message == 'You Won!':
         message_turtle.color("yellow")
-        win_sound.play()
+        playsound('winning.wav')
     if message == 'You Lose!':
         message_turtle.color("red")
-        gameover_sound.play()
+        playsound('gameover.wav')
     message_turtle.write(message, align='center', font=("System", 30, "bold"))
     turtle.hideturtle()
     turtle.uplate()
