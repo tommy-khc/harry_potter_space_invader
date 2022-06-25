@@ -5,8 +5,6 @@
 
 import turtle
 import random
-from pydub import AudioSegment
-from pydub.playback import play
 
 """
     Constants and variables
@@ -60,11 +58,6 @@ laser_hit_enemy_distance = 20
     # The laser will destory an enemy if the distance
     # between the laser and the enemy is smaller than
     # this value
-
-shoot_sound = AudioSegment.from_wav('shoot.wav')
-killed_sound = AudioSegment.from_wav('killed.wav')
-win_sound = AudioSegment.from_wav('winning.wav')
-gameover_sound = AudioSegment.from_wav('gameover.wav')
 
 enemy_firing_interval = 175
 
@@ -213,7 +206,7 @@ def kill(x,y):
     for enemy in enemies: 
         if enemy.isvisible() and A.distance(enemy)< laser_hit_enemy_distance:
                 enemy.hideturtle()
-                play(killed_sound)
+
     
               
     
@@ -284,7 +277,6 @@ def updatescreen():
                 # Stop if some enemy is hit
                 enemy.hideturtle()
                 laser.hideturtle()
-                play(killed_sound)
                 break
 
     if bullet.isvisible() and s == 0:
@@ -347,7 +339,6 @@ def shoot():
     # Shoot the laser only if it is not visible
     if not laser.isvisible():
         laser.showturtle()
-        play(shoot_sound)
         laser.goto(player.position())
         
     #
@@ -476,10 +467,8 @@ def gameover(message):
     message_turtle = turtle.Turtle()
     if message == 'You Won!':
         message_turtle.color("yellow")
-        play(win_sound)
     if message == 'You Lose!':
         message_turtle.color("red")
-        play(gameover)
     message_turtle.write(message, align='center', font=("System", 30, "bold"))
     turtle.hideturtle()
     turtle.uplate()
