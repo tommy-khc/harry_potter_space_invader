@@ -1,4 +1,3 @@
-#chan kin hang 20386450 khchancb@connect.ust.com
 """
     Turtle Graphics - Shooting Game
 """
