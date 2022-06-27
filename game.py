@@ -481,9 +481,6 @@ def gameover(message):
         gameover_sound_play = gameover_sound.play()
         gameover_sound_play.wait_done()
     message_turtle.write(message, align='center', font=("System", 30, "bold"))
-    turtle.hideturtle()
-    turtle.uplate()
-    print(message) # delete this line after completing the function
 
 """
     Set up main Turtle parameters
