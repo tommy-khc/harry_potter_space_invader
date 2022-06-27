@@ -59,10 +59,10 @@ laser_hit_enemy_distance = 20
     # between the laser and the enemy is smaller than
     # this value
 
-shoot_sound = sa.WaveObject.from_wave_file("shoot.wav")
-killed_sound = sa.WaveObject.from_wave_file("killed.wav")
-win_sound = sa.WaveObject.from_wave_file("winning.wav")
-gameover_sound = sa.WaveObject.from_wave_file("gameover.wav")
+shoot_sound = sa.WaveObject.from_wave_file("resource/shoot.wav")
+killed_sound = sa.WaveObject.from_wave_file("resource/killed.wav")
+win_sound = sa.WaveObject.from_wave_file("resource/winning.wav")
+gameover_sound = sa.WaveObject.from_wave_file("resource/gameover.wav")
 
 enemy_firing_interval = 175
 
@@ -212,9 +212,6 @@ def kill(x,y):
                 play = killed_sound.play()
                 play.wait_done()
 
-    
-              
-    
 """
     Handle the screen update and enemy movement
 """
@@ -258,14 +255,14 @@ def updatescreen():
             enemy.goto(x + dx, y + dy)
             if y > 0:
                 if (x // 20) % 2 == 0 :
-                    enemy.shape("Voldemort1.gif")
+                    enemy.shape("resource/Voldemort1.gif")
                 else:
-                    enemy.shape("Voldemort2.gif")
+                    enemy.shape("resource/Voldemort2.gif")
             else:
                 if (x // 20) % 2 == 0 :
-                    enemy.shape("Voldemort3.gif")
+                    enemy.shape("resource/Voldemort3.gif")
                 else:
-                    enemy.shape("Voldemort2.gif")
+                    enemy.shape("resource/Voldemort2.gif")
     # Part 4.3 - Moving the laser
     # Perfrom several actions if the laser is visible
     if laser.isvisible():
@@ -387,11 +384,11 @@ def gamestart(x, y):
     ### Player turtle ###
 
     # Add the spaceship picture
-    turtle.addshape("Harry_Potter.gif")
+    turtle.addshape("resource/Harry_Potter.gif")
 
     # Create the player turtle and move it to the initial position
     player = turtle.Turtle()
-    player.shape("Harry_Potter.gif")
+    player.shape("resource/Harry_Potter.gif")
     player.up()
     player.goto(player_init_x, player_init_y)
 
@@ -408,14 +405,14 @@ def gamestart(x, y):
     ### Enemy turtles ###
 
     # Add the enemy picture
-    turtle.addshape("Voldemort1.gif")
-    turtle.addshape("Voldemort2.gif")
-    turtle.addshape("Voldemort3.gif")
+    turtle.addshape("resource/Voldemort1.gif")
+    turtle.addshape("resource/Voldemort2.gif")
+    turtle.addshape("resource/Voldemort3.gif")
 
     for i in range(enemy_number):
         # Create the turtle for the enemy
         enemy = turtle.Turtle()
-        enemy.shape("Voldemort1.gif")
+        enemy.shape("resource/Voldemort1.gif")
         enemy.up()
 
         # Move to a proper position counting from the top left corner
@@ -427,8 +424,8 @@ def gamestart(x, y):
 
     # Create the laser turtle using the square turtle shape
     laser = turtle.Turtle()
-    turtle.addshape("shooting_laser.gif")
-    laser.shape("shooting_laser.gif")
+    turtle.addshape("resource/shooting_laser.gif")
+    laser.shape("resource/shooting_laser.gif")
 
     # Change the size of the turtle and change the orientation of the turtle
     
@@ -447,8 +444,8 @@ def gamestart(x, y):
 
     #Enemy_enemy_bullet
     bullet = turtle.Turtle()
-    turtle.addshape("enemy_bullet.gif")
-    bullet.shape("enemy_bullet.gif")
+    turtle.addshape("resource/enemy_bullet.gif")
+    bullet.shape("resource/enemy_bullet.gif")
     
     
     bullet.up()
@@ -488,10 +485,10 @@ def gameover(message):
 
 # Set up the turtle window
 turtle.setup(window_width, window_height)
-turtle.addshape("Harry_Potter_cover.gif")
+turtle.addshape("resource/Harry_Potter_cover.gif")
 cover = turtle.Turtle()
 cover.goto(0,0)
-cover.shape("Harry_Potter_cover.gif")
+cover.shape("resource/Harry_Potter_cover.gif")
 turtle.up()
 turtle.hideturtle()
 turtle.tracer(False)
