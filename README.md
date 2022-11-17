@@ -41,7 +41,7 @@ No framework is used in this project.
 To run this game:
 
 ```sh
-python {current drive}\...\game.py
+python {absolute directory of game.py}\game.py
 ```
 
 
