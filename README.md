@@ -22,15 +22,20 @@ Project is completed
 ## Screenshots
 
 Home Page </br>
-![Home Page](https://github.com/tommy-khc/images_of_every_repositories/blob/582e4dcb7071c652986bd89f5e239434ba63cc3a/space_invader_game_harry_potter/screenshot/home%20page.png) </br>
+![Home page](https://user-images.githubusercontent.com/66003316/202601592-67f8f036-d2a9-4331-85a5-61b14d9a72a2.png) </br>
+
 Casting spell </br>
-![Casting spell](https://github.com/tommy-khc/images_of_every_repositories/blob/26d835ca2eae9c9b13bd531d515b0d883089ec0c/space_invader_game_harry_potter/screenshot/casting%20spell.png) </br>
+![Casting spell](https://user-images.githubusercontent.com/66003316/202601658-6e3590ce-1633-4a33-be7b-54b8838f7155.png) </br>
+
 Enemy killed by spell </br>
-![Enemy killed by spell](https://github.com/tommy-khc/images_of_every_repositories/blob/20fbb56a45b0dae764bcfc0768ac001d79f81e8b/space_invader_game_harry_potter/screenshot/Enemy%20killed%20by%20spell.png) </br>
+![Enemy killed by spell](https://user-images.githubusercontent.com/66003316/202601726-98fd0eff-3299-45dc-98d6-04b14436125b.png) </br>
+
 Victory </br>
-![Victory](https://github.com/tommy-khc/images_of_every_repositories/blob/20fbb56a45b0dae764bcfc0768ac001d79f81e8b/space_invader_game_harry_potter/screenshot/win.png) </br>
+![Victory](https://user-images.githubusercontent.com/66003316/202601767-003ac56e-fa94-4e0f-91c7-951f935ca92a.png) </br>
+
 Game Over </br>
-![Game Over](https://github.com/tommy-khc/images_of_every_repositories/blob/20fbb56a45b0dae764bcfc0768ac001d79f81e8b/space_invader_game_harry_potter/screenshot/lose.png) </br>
+![Game Over](https://user-images.githubusercontent.com/66003316/202601834-4a19beca-a5f9-47fe-99af-00a775c787d2.png) </br>
+
 
 ## Tech/framework used
 
