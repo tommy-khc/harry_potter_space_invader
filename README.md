@@ -43,8 +43,9 @@ No framework is used in this project.
 
 ## How to use?
 
-To run this game:
-
+1. Clone or download this repo. </br>
+2. There is a file named game.py. </br>
+3. Run this file by following command. </br>
 ```sh
 python {absolute directory of game.py}\game.py
 ```
