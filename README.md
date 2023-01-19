@@ -1,15 +1,15 @@
 # Harry Potter Space Invader 
 
-Harry Potter Space Invader is a classic game - Space Invader with Harry Potter design.
+Harry Potter Space Invader is a classic game - Space Invader with a Harry Potter design.
 
 ## Motivation
-Gaming is a fascinating topic in software development for me as it involves animations, visual effects. And making a simple classic game in Python is easier than using other language.
+Gaming is a fascinating topic in software development for me as it involves animations and visual effects. And making a simple classic game in Python is easier than using another language.
 
 ## Features
 
 - Using Lego Harry Potter design
-- Has sound effect when spell is cast, user win and lose
-- Aimate the enemy "Voldemort"
+- Has sound effect when the spell is cast, user win and lose
+- Animate the enemy "Voldemort"
 
 ## Build status
 
@@ -27,7 +27,7 @@ Home Page </br>
 Casting spell </br>
 ![Casting spell](https://user-images.githubusercontent.com/66003316/202601658-6e3590ce-1633-4a33-be7b-54b8838f7155.png) </br>
 
-Enemy killed by spell </br>
+The Enemy killed by spell </br>
 ![Enemy killed by spell](https://user-images.githubusercontent.com/66003316/202601726-98fd0eff-3299-45dc-98d6-04b14436125b.png) </br>
 
 Victory </br>
@@ -41,11 +41,11 @@ Game Over </br>
 
 No framework is used in this project.
 
-## How to use?
+## How to use it?
 
 1. Clone or download this repo. </br>
 2. There is a file named game.py. </br>
-3. Run this file by following command. </br>
+3. Run this file by the following command. </br>
 ```sh
 python {absolute directory of game.py}\game.py
 ```
