@@ -3,7 +3,7 @@
 Harry Potter Space Invader is a classic game - Space Invader with a Harry Potter design.
 
 ## Motivation
-When I was in the first year of university, gaming is a fascinating topic in software development for me as it involves animations and visual effects. And making a simple classic game in Python is easier than using another language.
+In 2016, I was in the first year of university, gaming is a fascinating topic in software development for me as it involves animations and visual effects. And making a simple classic game in Python is easier than using another language.
 
 ## Features
 
